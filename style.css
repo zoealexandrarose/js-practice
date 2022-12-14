@@ -1,0 +1,68 @@
+@font-face {
+  font-family: Necto Mono;
+  src: url(necto-mono.woff2);
+}
+
+body {
+	font-family: Necto Mono;
+	font-size: 32px;
+	line-height: 1.5;
+
+	background-color: #111118;
+	color: #ffffff;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 48px;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+section.panner {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+section.panner div.world {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  padding: 48px;
+
+  display: grid; /* NOTE: grid layout, spacing in between */
+  grid-template-columns: repeat(4, 600px); /* NOTE: SIZING OF IMAGES - repeat of 4 times 600px */
+  grid-gap: 48px;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 24px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  section div.world {
+    grid-gap: 32px;
+  }
+
+  section img {
+    width: 300px;
+  }
+}
